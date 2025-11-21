@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { googleAuth, loginController, registerUser } from "../controllers/usercontroller";
-import { rateLimiter } from "../middleware.ts/ratelimit";
+import { rateLimiter } from "../middleware/ratelimit";
 
 const router = Router(); 
 

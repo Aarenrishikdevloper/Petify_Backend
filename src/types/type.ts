@@ -9,3 +9,8 @@ export interface IuserLogin{
     email:string; 
     password:string;
 }
+export interface createPromo {
+  category: string;
+  title: string;
+  image: string;
+}
