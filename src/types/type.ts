@@ -47,3 +47,8 @@ export type userupdate = {
  address?: string;
  phone?: string;
 };
+export interface ICategoryRequest {
+ name: string;
+ image: string;
+ priority: number;
+}

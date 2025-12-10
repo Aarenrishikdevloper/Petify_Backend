@@ -10,6 +10,7 @@ import userpetcontroller from "./routes/userpetroutes";
 import medicalRouter from "./routes/medicalroutes";
 import aiRouter from "./routes/botroutes";
 import cartRouter from "./routes/cartRoutes";
+import categoryRouter from "./routes/categoryRoutes";
 dotenv.config();
 const app = express();
 const PORT = 3000;
@@ -23,6 +24,7 @@ app.use(promoroutes);
 app.use(bannerroutes);
 app.use(userpetcontroller);
 app.use(medicalRouter);
+app.use(categoryRouter);
 
 app.get("/", rateLimiter, (req: Request, res: Response) => {
  res.send("Hello Express + TypeScript!");
