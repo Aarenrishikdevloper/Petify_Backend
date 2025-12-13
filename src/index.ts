@@ -11,6 +11,7 @@ import medicalRouter from "./routes/medicalroutes";
 import aiRouter from "./routes/botroutes";
 import cartRouter from "./routes/cartRoutes";
 import categoryRouter from "./routes/categoryRoutes";
+import feedbackRoutes from "./routes/feedbackroutes";
 dotenv.config();
 const app = express();
 const PORT = 3000;
@@ -20,6 +21,7 @@ app.use(userRoutes);
 app.use(cartRouter);
 app.use(aiRouter);
 app.use(productRoutes);
+app.use(feedbackRoutes);
 app.use(promoroutes);
 app.use(bannerroutes);
 app.use(userpetcontroller);
@@ -29,7 +31,12 @@ app.use(categoryRouter);
 app.get("/", rateLimiter, (req: Request, res: Response) => {
  res.send("Hello Express + TypeScript!");
 });
-
+process.on("unhandledRejection", (reason, p) => {
+ console.log("unhadnle Promise", reason);
+});
+process.on("uncaughtException", (err) => {
+ console.log("uncaught exception", err);
+});
 app.listen(PORT, "0.0.0.0", () => {
  console.log(`Server running on http://localhost:${PORT}`);
 });
