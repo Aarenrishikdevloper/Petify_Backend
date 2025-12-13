@@ -2,10 +2,10 @@ import { Router } from "express";
 import { rateLimiter } from "../middleware/ratelimit";
 import { authMiddleware } from "../middleware/authMiddleware";
 import {
-  addUserPet,
-  deletepet,
-  getUserPet,
-  updateUserpet,
+ addUserPet,
+ deletepet,
+ getUserPet,
+ updateUserpet,
 } from "../controllers/userpetcontroller";
 
 const router = Router();

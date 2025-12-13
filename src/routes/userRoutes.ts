@@ -11,7 +11,7 @@ import { authMiddleware } from "../middleware/authMiddleware";
 const router = Router();
 
 router.post("/register", rateLimiter, registerUser);
-router.post("/login", loginController);
+router.post("/login", rateLimiter, loginController);
 //router.post("/googleAuth",googleAuth)
 router.put("/updateUser", rateLimiter, authMiddleware, userUpdate);
 export default router;
